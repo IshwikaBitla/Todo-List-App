@@ -1,48 +1,144 @@
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+
+function displayTasks(){
+
+let list=document.getElementById("taskList");
+
+list.innerHTML="";
+
+
+tasks.forEach((task,index)=>{
+
+
+let li=document.createElement("li");
+
+
+li.innerHTML=
+
+task.name+
+
+"<button onclick='completeTask("+index+")'>Done</button>"+
+
+"<button onclick='editTask("+index+")'>Edit</button>"+
+
+"<button onclick='deleteTask("+index+")'>Delete</button>";
+
+
+if(task.completed){
+
+li.classList.add("completed");
+
+}
+
+
+list.appendChild(li);
+
+
+});
+
+
+document.getElementById("count").innerHTML=
+"Total Tasks: "+tasks.length;
+
+
+saveTasks();
+
+}
+
+
+
 function addTask(){
 
-    let input = document.getElementById("taskInput");
-
-    let task = input.value;
+let input=document.getElementById("taskInput");
 
 
-    if(task === ""){
-        alert("Enter a task");
-        return;
-    }
+if(input.value==""){
+
+alert("Enter task");
+
+return;
+
+}
 
 
-    let li = document.createElement("li");
+tasks.push({
+
+name:input.value,
+completed:false
+
+});
 
 
-    li.innerHTML = task + 
-    " <button onclick='completeTask(this)'>Done</button>" +
-    " <button onclick='deleteTask(this)'>Delete</button>";
+input.value="";
 
 
-    document.getElementById("taskList")
-    .appendChild(li);
-
-
-    input.value = "";
+displayTasks();
 
 }
 
 
 
-function completeTask(button){
+function completeTask(index){
 
-    let task = button.parentElement;
+tasks[index].completed=true;
 
-    task.classList.toggle("completed");
+displayTasks();
+
+}
+
+
+
+function editTask(index){
+
+let newTask=prompt(
+"Edit task",
+tasks[index].name
+);
+
+
+if(newTask){
+
+tasks[index].name=newTask;
+
+}
+
+
+displayTasks();
 
 }
 
 
 
-function deleteTask(button){
+function deleteTask(index){
 
-    let task = button.parentElement;
+tasks.splice(index,1);
 
-    task.remove();
+displayTasks();
 
 }
+
+
+
+function clearTasks(){
+
+tasks=[];
+
+displayTasks();
+
+}
+
+
+
+function saveTasks(){
+
+localStorage.setItem(
+"tasks",
+JSON.stringify(tasks)
+);
+
+}
+
+
+
+displayTasks();

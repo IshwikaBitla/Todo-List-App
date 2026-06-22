@@ -1,50 +1,51 @@
-body {
+body{
 
-    font-family: Arial;
-    background: #f2f2f2;
-
-}
-
-
-.container {
-
-    width: 400px;
-    margin: 100px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+font-family:Arial;
+background:#f2f2f2;
 
 }
 
 
-input {
+.container{
 
-    width: 70%;
-    padding: 10px;
-
-}
-
-
-button {
-
-    padding: 10px;
-    cursor: pointer;
+width:400px;
+margin:80px auto;
+background:white;
+padding:25px;
+border-radius:10px;
 
 }
 
 
-li {
+input{
 
-    margin: 10px;
-    padding: 10px;
-    background: #eee;
+width:70%;
+padding:10px;
 
 }
 
 
-.completed {
+button{
 
-    text-decoration: line-through;
-    color: gray;
+padding:10px;
+cursor:pointer;
+
+}
+
+
+li{
+
+margin:10px;
+padding:10px;
+background:#eee;
+list-style:none;
+
+}
+
+
+.completed{
+
+text-decoration:line-through;
+color:gray;
 
 }
