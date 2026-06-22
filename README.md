@@ -7,16 +7,20 @@ This project allows users to add tasks, mark tasks as completed, and delete task
 ## 🚀 Features
 
 - Add new tasks
-- Mark tasks as completed
 - Delete tasks
-- Simple and clean user interface
-- Runs directly in the browser
+- Mark tasks as completed
+- Edit existing tasks
+- Display total task count
+- Clear all tasks
+- Data saved using Local Storage
+- Responsive and simple UI
 
 ## 🛠️ Technologies Used
 
 - HTML
 - CSS
 - JavaScript
+- Local Storage
 
 ## 📂 Project Structure
 
@@ -47,19 +51,4 @@ IshwikaBitla
 - Add dark mode
 - Add user login
 - Add database support
-## 🚀 Features
 
-- Add new tasks
-- Delete tasks
-- Mark tasks as completed
-- Edit existing tasks
-- Display total task count
-- Clear all tasks
-- Data saved using Local Storage
-- Responsive and simple UI
-## 🛠️ Technologies Used
-
-- HTML
-- CSS
-- JavaScript
-- Local Storage
